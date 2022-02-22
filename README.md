@@ -4,11 +4,11 @@
 
 A daily organizer that has the following features :-
 
-To Do List
-Daily Weather Update
-Habit Water Tracker
-Date and Time Functionality
-Light and Dark Mode Settings
+- To Do List
+- Daily Weather Update
+- Habit Water Tracker
+- Date and Time Functionality
+- Light and Dark Mode Settings
 
 ## Getting Started
 
