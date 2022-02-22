@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Daily Organizer</title>
+</head>
+
+<body>
+    <!-- header section -->
+    <div class="header-section">
+        <h1>Daily Organizer</h1>
+        <div id="toggle">
+            <img src="../src/images/light.png" width="20" height="20" class="toggle-icon">
+            <img src="../src/images/dark.png" width=" 20" height="20" class="toggle-icon">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!-- subheader section -->
+    <div class="sub-header-section">
+        <div class="rainbow-quote">
+            <h2 class="quote">"The way I see it. If you want the rainbow. You gotta put up with the rain."<span
+                    class="author">- Dolly
+                    Parton</span></h2>
+        </div>
+        <div class="date-section">
+            <h2 class="date"></h2>
+            <h2 class="time"></h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- to-do list section -->
+            <div class="task-section">
+                <div class="task-header">
+                    <h1 class="to-do-title">To Do List</h1>
+                    <h4 class="todo-summary"></h4>
+                </div>
+                <form id="to-do-form">
+                    <label for="input"> </label>
+                    <input type="text" name="toDo" id="input" autocomplete="off" />
+                    <button type="submit" id="submit-btn">Add Task</button>
+                </form>
+                <div id="to-dos"></div>
+            </div>
+        </div>
+        <!-- weather section -->
+        <div class="row">
+            <div class="weather-section">
+                <h1 class="timezone"></h1>
+                <h1 class="city"></h1>
+                <h1 class="temp"></h1>
+                <h1 class="summary"></h1>
+                <div class="weather-stats">
+                    <div class="col">
+                        <div class="stat">
+                            <h2 class="sunrise"></h2>
+                        </div>
+                        <div class="stat">
+                            <h2 class="sunset"></h2>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="stat">
+                            <h2 class="wind-speed"></h2>
+                        </div>
+                        <div class="stat">
+                            <h2 class="visibility"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- water section -->
+            <div class="water-tracker">
+                <div class="header">
+                    <h1 class="water-header">Water Habit Tracker</h1>
+                    <p class="bottle-count">0 / 8 Bottles of Water Drank Today!</p>
+                </div>
+                <div class="bottles">
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                    <button class="bottle"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

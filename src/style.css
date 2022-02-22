@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #0b091e;
+  transition: 0.2s;
+  color: white;
+  padding: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* <-- toggle styling -->  */
+
+.light-mode {
+  background-color: white;
+  color: #0b091e;
+}
+
+.light-mode h1 {
+  color: #0b091e;
+}
+
+.light-mode .toggle-section {
+  border-bottom: 1px solid black;
+}
+
+.toggle-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+body.light-mode #toggle .circle {
+  left: 30px;
+}
+
+#toggle {
+  background-color: #7f73e8;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 28px;
+  width: 56px;
+  transform: scale(1);
+  transition: transform 0.2s linear;
+}
+
+.circle {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+/* <-- header/subheader styling -->  */
+
+.header-section,
+.sub-header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-section {
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+}
+
+.rainbow-quote {
+  max-width: 600px;
+  font-style: italic;
+}
+
+span.author {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.date-section {
+  text-align: end;
+  margin: 10px 20px;
+}
+
+.time {
+  font-size: 50px;
+}
+
+/* <-- water tracking styling --> */
+
+.bottle {
+  border: none;
+  background: url('/src/images/full-bottle.png') no-repeat center;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+}
+
+.bottles {
+  display: flex;
+  align-items: center;
+}
+
+.bottle.empty {
+  background: url('/src/images/empty-bottle.png') no-repeat center;
+  background-size: cover;
+}
+
+.water-tracker {
+  background: lemonchiffon;
+  color: black;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.bottle-count {
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.water-header {
+  margin-bottom: 15px;
+}
+
+/* <-- todolist styling --> */
+
+.row {
+  width: 50%;
+  margin: 10px 40px;
+}
+
+.to-do-title,
+.todo-summary {
+  color: #0b091e;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.task-section {
+  background-color: #ccccff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(247, 244, 244, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  overflow: scroll;
+  min-height: 500px;
+  max-height: 600px;
+}
+
+#to-do-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input#input {
+  width: 100%;
+  padding: 3px 10px;
+  margin-right: 5px;
+}
+
+input.todo-text {
+  width: 100%;
+  border: none;
+}
+
+#submit-btn {
+  background: #0b091e;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 3px 10px;
+  width: 20%;
+}
+
+.todo-item-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 3px solid bisque;
+  padding: 3px;
+}
+
+#to-dos {
+  margin: 10px 0;
+  background: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  /* border-bottom: 3px solid bisque; */
+}
+
+input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+.delete-btn,
+.edit-btn {
+  margin-left: 14px;
+}
+
+.edit-btn {
+  color: #0b091e;
+  background: white;
+  border: 1px solid #0b091e;
+  padding: 0 10px;
+}
+
+.delete-btn {
+  background-color: #0b091e;
+  border: 1px solid #0b091e;
+  color: white;
+  padding: 0 10px;
+}
+
+.empty-message {
+  color: black;
+}
+
+/* <-- weather styling --> */
+
+.weather-section {
+  background: #cae9f5;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: rgb(247 244 244 / 24%) 0px 3px 8px;
+  color: #0b091e;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.temp {
+  font-size: 70px;
+  text-align: center;
+}
+
+.summary {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #0b091e;
+}
+
+.weather-stats {
+  padding: 10px;
+}
+
+.col {
+  display: flex;
+  justify-content: space-between;
+}
