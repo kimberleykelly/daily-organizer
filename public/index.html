@@ -13,11 +13,11 @@
     <!-- header section -->
     <div class="header-section">
         <h1>Daily Organizer</h1>
-        <div id="toggle">
-            <img src="../src/images/light.png" width="20" height="20" class="toggle-icon">
-            <img src="../src/images/dark.png" width=" 20" height="20" class="toggle-icon">
+        <button aria-label="toggle light and dark mode" type="button" id="toggle">
+            <img role="presentation" src="../src/images/light.png" alt="" width="20" height="20" class="toggle-icon">
+            <img role="presentation" src="../src/images/dark.png" width=" 20" height="20" alt="" class="toggle-icon">
             <div class="circle"></div>
-        </div>
+        </button>
     </div>
     <!-- subheader section -->
     <div class="sub-header-section">
@@ -80,14 +80,22 @@
                     <p class="bottle-count">0 / 8 Bottles of Water Drank Today!</p>
                 </div>
                 <div class="bottles">
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
-                    <button class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
+                    <button aria-pressed="false" aria-label="toggle water bottle usage" type="button"
+                        class="bottle"></button>
                 </div>
             </div>
         </div>
