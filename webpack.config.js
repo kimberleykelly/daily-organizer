@@ -1,3 +1,5 @@
+require('dotenv').config()
+const { DefinePlugin } = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -35,5 +37,13 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
+  plugins: [
+    new DefinePlugin({
+      'process.env': {
+        RAPIDAPIHOST: JSON.stringify(process.env.RAPIDAPIHOST),
+        RAPIDAPIKEY: JSON.stringify(process.env.RAPIDAPIKEY),
+      },
+    }),
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
+  ],
 }
