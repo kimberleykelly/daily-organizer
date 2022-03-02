@@ -1,51 +1,50 @@
-const displayWeatherSection = document.querySelector('.weather-section')
+const weatherSectionContainer = document.querySelector('.row-2')
 
 window.addEventListener('load', () => {
-  displayWeatherSection.style.display = 'none'
-
-  let lat
-  let lng
-
-  // gets the users current geolocation position
-  // grabs the lat/lng to make a request to the weatherbit API
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      lng = position.coords.longitude
-      lat = position.coords.latitude
-
-      const url = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${lng}&lat=${lat}`
+      const url = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}`
 
       getWeatherData(url)
     })
   }
 })
 
-// await the response from the API
-// if the promise is succesful - await the JSON response, else throw an error
-
 const getWeatherData = async (url) => {
   try {
     const response = await fetch(url, {
       method: 'GET',
       headers: {
-        'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com',
-        'x-rapidapi-key': '3d2577eabfmsh7d2a057ee521bf6p1f2c4ajsn2b884c0c0f45',
+        'x-rapidapi-host': process.env.RAPIDAPIHOST,
+        'x-rapidapi-key': process.env.RAPIDAPIKEY,
       },
     })
-    if (response.ok) {
-      const jsonResponse = await response.json()
-      displayWeather(jsonResponse)
-    } else {
-      throw new Error('request failed')
-    }
+
+    if (!response.ok) throw new Error(response.statusText)
+
+    const jsonResponse = await response.json()
+    displayWeather(jsonResponse)
   } catch (err) {
-    console.error('ERROR', err)
+    // creates an API error message container and prepends it to ".row-2" DOM node
+    const container = document.createElement('div')
+    container.classList.add('error-loading-weather')
+
+    const errorMessage = document.createElement('h1')
+    errorMessage.innerText = 'Unable to fetch weather...'
+    errorMessage.style = 'font-size: 30px'
+
+    const errorMessageFromAPI = document.createElement('h2')
+    errorMessageFromAPI.style = 'font-size: 20px'
+    errorMessageFromAPI.innerText = err.toString()
+
+    container.appendChild(errorMessage)
+    container.appendChild(errorMessageFromAPI)
+    weatherSectionContainer.prepend(container)
   }
 }
 
-// display weather data to the DOM
-
 function displayWeather(response) {
+  const displayWeatherSection = document.querySelector('.weather-section')
   const displayTimezone = document.querySelector('.timezone')
   const displayCity = document.querySelector('.city')
   const displayTemp = document.querySelector('.temp')
@@ -55,15 +54,12 @@ function displayWeather(response) {
   const displayWindSpeed = document.querySelector('.wind-speed')
   const displayVisibility = document.querySelector('.visibility')
 
-  // displays the weather section only when we have a succesful response from the API
-  displayWeatherSection.style.display = 'block'
+  displayWeatherSection.style.display = 'flex'
 
-  // pull out the data we need from the API response
   const { timezone, city_name, sunrise, sunset, vis, weather, temp, wind_spd } =
     response.data[0]
   const { description } = weather
 
-  // set the text content of each DOM element
   displayTimezone.textContent = timezone
   displayCity.textContent = city_name
   displayTemp.textContent = `${temp}°`
